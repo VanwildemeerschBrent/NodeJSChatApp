@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodeJS Chat app</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav></nav>
+    <div class="message_container h-3 w-full"></div>
+    <form class="send_container w-full fixed bottom-0 h-3/12 p-4">
+      <input
+        type="text"
+        class="message_input w-9/12 float-left relative border rounded-lg p-3"
+        required
+        placeholder="Message"
+      />
+      <button type="submit" class="p-3 message_send w-2/12 float-right relative bg-blue-500 text-white">Send</button>
+    </form>
+  </body>
+  <script src="./index.js"></script>
+</html>
