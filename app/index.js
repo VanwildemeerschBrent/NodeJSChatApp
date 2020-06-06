@@ -1,10 +1,21 @@
 const socket = io("http://localhost:3000");
 // Message form elements
+
+let notSeenMessages = 0;
+let isChatVisible = true;
+
+document.addEventListener("visibilitychange", (e) => {
+  document.visibilityState === "visible" ? (isChatVisible = true) : (isChatVisible = false);
+  if (isChatVisible) document.title = "NodeJS Chat app";
+});
+
 const messageForm = document.querySelector(".send_container");
 const messageContainer = document.querySelector(".message_container");
 const joinForm = document.querySelector(".join_chat");
 
 socket.on("chat-message", (message) => {
+  isChatVisible ? (notSeenMessages = 0) : notSeenMessages++;
+  notSeenMessages !== 0 ? (document.title = `(${notSeenMessages}) NodeJS Chat app`) : "NodeJS Chat app";
   appendReceivedMessage(message);
 });
 
