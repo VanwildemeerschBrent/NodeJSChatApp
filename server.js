@@ -1,3 +1,5 @@
+'use strict';
+
 const io = require("socket.io")(3000);
 let clients = [];
 io.on("connection", (socket) => {

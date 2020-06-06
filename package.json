@@ -4,8 +4,8 @@
   "description": "Chat app in NodeJS with SocketIO",
   "main": "./server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./server/noserver.js"
+    "dev": "nodemon ./server/server.js",
+    "build": "rollup --config"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/VanwildemeerschBrent/NodeJSChatApp#readme",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "rollup-plugin-copy": "^3.3.0"
   },
   "dependencies": {
     "socket.io": "^2.3.0"
